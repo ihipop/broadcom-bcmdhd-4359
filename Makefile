@@ -416,6 +416,10 @@ ifeq ($(CONFIG_BCMDHD_FW_PATH),)
 	DHDCFLAGS += -DCONFIG_BCMDHD_FW_PATH="\"/vendor/etc/firmware/fw_bcmdhd.bin\""
 	DHDCFLAGS += -DCONFIG_BCMDHD_NVRAM_PATH="\"/vendor/etc/firmware/nvram.txt\""
 	DHDCFLAGS += -DCONFIG_BCMDHD_CLM_PATH="\"/vendor/etc/firmware/clm_bcmdhd.blob\""
+else
+	DHDCFLAGS += -DCONFIG_BCMDHD_FW_PATH="\"$(CONFIG_BCMDHD_FW_PATH)\""
+	DHDCFLAGS += -DCONFIG_BCMDHD_NVRAM_PATH="\"$(CONFIG_BCMDHD_NVRAM_PATH)\""
+	DHDCFLAGS += -DCONFIG_BCMDHD_CLM_PATH="\"$(CONFIG_BCMDHD_FW_PATH)\""
 endif
 endif
 
